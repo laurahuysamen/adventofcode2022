@@ -1,15 +1,5 @@
 import sys
 import time
-import numpy as np
-from collections import Counter
-import itertools
-from functools import reduce
-import copy
-import math
-import uuid
-import networkx as nx
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
 
 
 def read_file(filename):
@@ -44,11 +34,7 @@ def main(filename):
 def part1(filename):     
     results = []
     
-    backpack_compartment1 = []
-    backpack_compartment2 = []
     lowercase = "abcdefghijklmnopqrstuvwxyz"
-    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
 
     lines = read_file(filename)
     for count, line in enumerate(lines):
@@ -64,17 +50,12 @@ def part1(filename):
         else:
             results.append(ord(common_item) - 38)
            
-    
     return results
 
 def part2(filename):
     results = []
-
     rucksack = []
-
     lowercase = "abcdefghijklmnopqrstuvwxyz"
-    uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
     lines = read_file(filename)
     for count, line in enumerate(lines):
         rucksack.append(line)
@@ -89,7 +70,6 @@ def part2(filename):
                 results.append(ord(common_item) - 96)
             else:
                 results.append(ord(common_item) - 38)
-
 
     return results
 
