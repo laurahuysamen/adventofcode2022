@@ -1,15 +1,5 @@
 import sys
 import time
-import numpy as np
-from collections import Counter
-import itertools
-from functools import reduce
-import copy
-import math
-import uuid
-import networkx as nx
-from mpl_toolkits import mplot3d
-import matplotlib.pyplot as plt
 
 
 def read_file(filename):
@@ -44,10 +34,9 @@ def part1(filename):
     lines = read_file(filename)
     for count, line in enumerate(lines):
         pairs = line.split(",")
-        range1 = [int(i) for i in pairs[0].split("-")]
-        range2 = [int(i) for i in pairs[1].split("-")]
+        range1 = [int(i) for i in pairs[0].split("-")]  
+        range2 = [int(i) for i in pairs[1].split("-")]  
 
-        #if 1 contains 2
         if range1[0] >= range2[0] and range1[1] <= range2[1]:
             results.append(1)
         elif range2[0] >= range1[0] and range2[1] <= range1[1]:    
@@ -64,8 +53,8 @@ def part2(filename):
         range1 = [int(i) for i in pairs[0].split("-")]
         range2 = [int(i) for i in pairs[1].split("-")]
 
-        list1 = range(range1[0],range1[1]+1)
-        list2 = range(range2[0],range2[1]+1)
+        list1 = range(range1[0],range1[1] + 1)
+        list2 = range(range2[0],range2[1] + 1)
 
         combined = [l for l in list1 if l in list2]
         if len(combined) > 0:
