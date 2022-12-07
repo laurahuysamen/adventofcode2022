@@ -123,12 +123,3 @@ if __name__ == "__main__":
             filename = f"example_input{sys.argv[1]}.txt"
     #filename = 
     main(filename)
-
-class directory:
-    def __init__(self, contents):
-        self.contents = contents
-
-class file:
-    def __init__(self, name, size):
-        self.name = name
-        self.size = size
